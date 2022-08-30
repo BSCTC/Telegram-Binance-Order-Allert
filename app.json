@@ -1,0 +1,39 @@
+{
+    "name": "binance-spot-order-notifier",
+    "description": "Binance does not currently offer notifications when orders are created, cancelled or fulfilled etc.. With this repo you will receive telegram notifications for your binance spot order status.",
+    "logo": "https://i.ibb.co/WGZzx6r/Binance-Coin-BNB-icon.png",
+    "repository": "https://github.com/PiyushDixit96/binance-spot-order-notification-heroku.git",
+    "keywords": ["node", "binance","bot","market","maker","algo","crypto","spot","order","notifier","notification"],
+     "addons": [
+    {
+       "plan": "scheduler"
+    }],
+    "env": {
+      "BINANCE_API_KEY": {
+        "description": "Your Binance API Key",
+        "required": true
+      },
+      "BINANCE_SECRET_KEY": {
+        "description": "Your Binance API Secret",
+        "required": true
+      },
+      "TELEGRAM_TOKEN": {
+        "description": "Telegram Key for your bot (To create one follow https://core.telegram.org/bots#6-botfather )",
+        "required": true
+      },
+      "TELEGRAM_CHAT_ID": {
+        "description": "Unique identifier for the target chat, Your Telegram Chat ID ",
+        "required": true
+      },
+      "NOTIFICATION_SETTINGS": {
+        "description": "Set 1 to Enable and 0 to Disable. Make changes as per your need. Please Goto this link [ https://github.com/PiyushDixit96/binance-spot-order-notification-heroku#notification_settings-description ] for help.",
+        "required": false,
+        "value": "[{'NEW': 1, 'CANCELED': 1, 'TRADE': 1},{'LIMIT': 1, 'MARKET': 1, 'STOP_LOSS': 1},{'BUY': 1, 'SELL': 1}]"
+      },
+      "TIME_ZONE_STRING": {
+        "description": "your local TIME ZONE STRING, default is 'Asia/Kolkata'",
+        "required": false,
+        "value": "Asia/Kolkata"
+      }
+    }
+ }
